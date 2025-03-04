@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        :root {
+            --sidebar-width: 250px;
+            --topbar-height: 60px;
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-bg: #ecf0f1;
+            --dark-bg: #34495e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }   
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: var(--sidebar-width);
+            background-color: var(--secondary-color);
+            color: white;
+            transition: all 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            padding: 15px;
+            text-align: center;
+            background-color: var(--dark-bg);
+            height: var(--topbar-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .sidebar-menu {
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-menu li a {
+            padding: 12px 20px;
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .sidebar-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .sidebar-menu li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-menu li.active a {
+            background-color: var(--primary-color);
+            color: white;
+            border-left: 4px solid white;
+        }
+        
+        /* Main content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: all 0.3s;
+        }
+        
+        /* Topbar */
+        .topbar {
+            height: var(--topbar-height);
+            background-color: white;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .toggle-sidebar {
+            cursor: pointer;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-menu img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        /* Content area */
+        .content {
+            padding: 20px;
+            min-height: calc(100vh - var(--topbar-height));
+        }
+        
+        /* Cards */
+        .dashboard-card {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .card-icon.primary { background-color: var(--primary-color); }
+        .card-icon.success { background-color: var(--success-color); }
+        .card-icon.warning { background-color: var(--warning-color); }
+        .card-icon.danger { background-color: var(--danger-color); }
+        
+        .dashboard-card h3 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        
+        .dashboard-card p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        /* Dictionary search form */
+        .dictionary-search {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .search-results {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .word-card {
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .word-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .word-card .pronunciation {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        
+        .word-card .part-of-speech {
+            display: inline-block;
+            background-color: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .word-card .translation {
+            margin-bottom: 10px;
+        }
+        
+        .word-card .example {
+            padding-left: 10px;
+            border-left: 2px solid #ddd;
+            font-style: italic;
+            color: #555;
+            margin: 10px 0;
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .data-table tbody tr:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .data-table .actions {
+            text-align: right;
+        }
+        
+        .data-table .actions a {
+            margin-left: 8px;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+        
+        .data-table .actions a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Forms */
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        /* Language selector */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .language-switcher i {
+            font-size: 1.2rem;
+            margin: 0 10px;
+        }
+        
+        /* Statistics */
+        .statistics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Recent activity */
+        .activity-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-content h5 {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .activity-content p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+        
+        .activity-time {
+            font-size: 0.8rem;
+            color: #95a5a6;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>Dictionary Admin</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-search"></i> Tra cứu từ điển</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-book"></i> Quản lý từ điển</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-plus-circle"></i> Thêm từ mới</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-history"></i> Lịch sử tra cứu</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-cog"></i> Cài đặt</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="user-menu">
+                <img src="/api/placeholder/40/40" alt="User Avatar">
+                <span>Admin</span>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="content">
+            <div class="container-fluid">
+                <!-- Page title -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3">Dashboard</h1>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Thêm từ mới
+                    </button>
+                </div>
+
+                <!-- Statistics cards -->
+                <div class="statistics-container">
+                    <div class="dashboard-card">
+                        <div class="card-icon primary">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>5</h3>
+                        <p>Tổng số từ điển</p>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon success">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <h3>12,450</h3>
+                        <p>Tổng số từ vựng</p>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon warning">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>348</h3>
+                        <p>Người dùng đăng ký</p>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon danger">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>4,289</h3>
+                        <p>Lượt tra cứu tháng này</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Quick search -->
+                    <div class="col-md-6 mb-4">
+                        <div class="dictionary-search">
+                            <h4>Tra cứu nhanh</h4>
+                            <form>
+                                <div class="language-selector">
+                                    <select class="form-select">
+                                        <option value="en">Tiếng Anh</option>
+                                        <option value="vi">Tiếng Việt</option>
+                                        <option value="fr">Tiếng Pháp</option>
+                                        <option value="de">Tiếng Đức</option>
+                                        <option value="ja">Tiếng Nhật</option>
+                                    </select>
+                                    
+                                    <div class="language-switcher">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    
+                                    <select class="form-select">
+                                        <option value="vi">Tiếng Việt</option>
+                                        <option value="en">Tiếng Anh</option>
+                                        <option value="fr">Tiếng Pháp</option>
+                                        <option value="de">Tiếng Đức</option>
+                                        <option value="ja">Tiếng Nhật</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Nhập từ cần tra cứu...">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search"></i> Tra cứu
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <div class="search-results">
+                                <div class="word-card">
+                                    <h4>hello</h4>
+                                    <div class="pronunciation">/həˈloʊ/</div>
+                                    <div class="part-of-speech">danh từ</div>
+                                    <div class="translation">
+                                        <strong>xin chào</strong>: lời chào hỏi thông dụng khi gặp hoặc gọi cho ai đó
+                                    </div>
+                                    <div class="example">Hello! How are you today? - Xin chào! Hôm nay bạn khỏe không?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent activities -->
+                    <div class="col-md-6 mb-4">
+                        <div class="dashboard-card">
+                            <h4>Hoạt động gần đây</h4>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon primary">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h5>Từ mới được thêm vào</h5>
+                                    <p>Admin đã thêm từ "algorithm" vào từ điển Anh-Việt</p>
+                                </div>
+                                <div class="activity-time">
+                                    5 phút trước
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h5>Người dùng mới đăng ký</h5>
+                                    <p>NguyenVanA đã đăng ký tài khoản</p>
+                                </div>
+                                <div class="activity-time">
+                                    1 giờ trước
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h5>Từ điển được cập nhật</h5>
+                                    <p>Editor1 đã cập nhật 15 từ trong từ điển Việt-Pháp</p>
+                                </div>
+                                <div class="activity-time">
+                                    3 giờ trước
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon danger">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h5>Từ vựng bị xóa</h5>
+                                    <p>Admin đã xóa từ "xyz" khỏi từ điển Anh-Việt</p>
+                                </div>
+                                <div class="activity-time">
+                                    1 ngày trước
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent searches -->
+                <div class="dashboard-card">
+                    <h4>Lịch sử tra cứu gần đây</h4>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Từ khóa</th>
+                                    <th>Từ điển</th>
+                                    <th>Người dùng</th>
+                                    <th>Thời gian</th>
+                                    <th>Kết quả</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>hello</td>
+                                    <td>Anh-Việt</td>
+                                    <td>user123</td>
+                                    <td>03/03/2025 09:45</td>
+                                    <td>Có kết quả</td>
+                                </tr>
+                                <tr>
+                                    <td>bonjour</td>
+                                    <td>Pháp-Việt</td>
+                                    <td>nguyena</td>
+                                    <td>03/03/2025 09:30</td>
+                                    <td>Có kết quả</td>
+                                </tr>
+                                <tr>
+                                    <td>algorithm</td>
+                                    <td>Anh-Việt</td>
+                                    <td>admin</td>
+                                    <td>03/03/2025 09:15</td>
+                                    <td>Có kết quả</td>
+                                </tr>
+                                <tr>
+                                    <td>xyzabc</td>
+                                    <td>Anh-Việt</td>
+                                    <td>trangb</td>
+                                    <td>03/03/2025 09:00</td>
+                                    <td>Không có kết quả</td>
+                                </tr>
+                                <tr>
+                                    <td>computer</td>
+                                    <td>Anh-Việt</td>
+                                    <td>user456</td>
+                                    <td>03/03/2025 08:45</td>
+                                    <td>Có kết quả</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle sidebar
+            $('.toggle-sidebar').click(function() {
+                $('.sidebar').toggleClass('show');
+                $('.main-content').toggleClass('push');
+            });
+            
+            // Language switcher
+            $('.language-switcher').click(function() {
+                let sourceSelect = $(this).prev();
+                let targetSelect = $(this).next();
+                
+                let sourceVal = sourceSelect.val();
+                let targetVal = targetSelect.val();
+                
+                sourceSelect.val(targetVal);
+                targetSelect.val(sourceVal);
+            });
+        });
+    </script>
+</body>
+</html>

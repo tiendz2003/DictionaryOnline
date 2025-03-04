@@ -1,0 +1,376 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\data\\dictionarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\data\\dictionarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\services\\googletranslationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\services\\googletranslationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\services\\dictionaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\services\\dictionaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\googletranslateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\googletranslateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\dictionaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\dictionaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\controllers\\dictionarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\controllers\\dictionarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\wordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\wordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|c:\\users\\dell\\source\\repos\\dictionaryonline\\dictionaryonline\\models\\dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57E45A61-2DF1-4BDB-9A07-245768B8AC18}|DictionaryOnline\\DictionaryOnline.csproj|solutionrelative:dictionaryonline\\models\\dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "DictionaryOnline\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4CAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-04T09:58:31.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Views\\DashBoard\\Index.cshtml",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Views\\DashBoard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Views\\DashBoard\\Index.cshtml",
+              "RelativeToolTip": "DictionaryOnline\\Views\\DashBoard\\Index.cshtml",
+              "ViewState": "AgIAAFgCAAAAAAAAAAAAAIMCAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-04T09:53:20.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Program.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Program.cs*",
+              "RelativeToolTip": "DictionaryOnline\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:35:31.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DictionaryDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Data\\DictionaryDbContext.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Data\\DictionaryDbContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Data\\DictionaryDbContext.cs",
+              "RelativeToolTip": "DictionaryOnline\\Data\\DictionaryDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:31:29.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\appsettings.json",
+              "RelativeDocumentMoniker": "DictionaryOnline\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\appsettings.json",
+              "RelativeToolTip": "DictionaryOnline\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-04T09:28:03.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GoogleTranslationService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Services\\GoogleTranslationService.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Services\\GoogleTranslationService.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Services\\GoogleTranslationService.cs",
+              "RelativeToolTip": "DictionaryOnline\\Services\\GoogleTranslationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:27:01.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DictionaryService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Services\\DictionaryService.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Services\\DictionaryService.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Services\\DictionaryService.cs",
+              "RelativeToolTip": "DictionaryOnline\\Services\\DictionaryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:26:59.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GoogleTranslateResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\GoogleTranslateResponse.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\GoogleTranslateResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\GoogleTranslateResponse.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\GoogleTranslateResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:26:51.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\RegisterViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:23:14.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DictionaryOnline\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:21:30.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashBoardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\DashBoardViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\DashBoardViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\DashBoardViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\DashBoardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:20:47.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DictionaryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\DictionaryViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\DictionaryViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\DictionaryViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\DictionaryViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:18:27.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WordViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\WordViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\WordViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\WordViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\WordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:14:38.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DictionaryController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\DictionaryController.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Controllers\\DictionaryController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\DictionaryController.cs",
+              "RelativeToolTip": "DictionaryOnline\\Controllers\\DictionaryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:10:35.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "DictionaryOnline\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:09:29.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\ViewModel\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\ViewModel\\LoginViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\ViewModel\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:09:22.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Dictionary.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\Dictionary.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Models\\Dictionary.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\Dictionary.cs",
+              "RelativeToolTip": "DictionaryOnline\\Models\\Dictionary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:07:19.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "DictionaryOnline\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:06:53.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Models\\User.cs",
+              "RelativeToolTip": "DictionaryOnline\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:06:12.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "DictionaryOnline\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "DictionaryOnline\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:06:02.816Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
