@@ -1,0 +1,52 @@
+﻿@model List<DictionaryOnline.Models.Dictionary>
+@{
+    ViewData["Title"] = "Danh sách từ điển";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 class="mt-4">Danh sách từ điển</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tên từ điển</th>
+                    <th>Ngôn ngữ nguồn</th>
+                    <th>Ngôn ngữ đích</th>
+                    <th>Mô tả</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dictionary in Model)
+                {
+                    <tr>
+                        <td>@dictionary.Name</td>
+                        <td>@dictionary.SourceLanguage</td>
+                        <td>@dictionary.TargetLanguage</td>
+                        <td>@dictionary.Description</td>
+                        <td>@(dictionary.IsActive ? "Kích hoạt" : "Không kích hoạt")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Chưa có từ điển nào trong hệ thống.</p>
+    }
+
+    <a asp-action="Create" asp-controller="Dictionary" class="btn btn-primary mt-3">
+        <i class="fas fa-plus"></i> Thêm từ mới
+    </a>
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-secondary mt-3">Quay về trang chủ</a>
+</div>

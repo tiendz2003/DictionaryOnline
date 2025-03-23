@@ -1,13 +1,12 @@
-﻿using System.Data;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 
 namespace DictionaryOnline.Models
 {
-    public class User
+    public class User: IdentityUser<int>
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+     
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastLogin { get; set; }
@@ -27,7 +26,9 @@ namespace DictionaryOnline.Models
         public bool SaveSearchHistory { get; set; }
         public string Theme { get; set; }
 
+       
         public int UserId { get; set; }
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 
@@ -43,10 +44,9 @@ namespace DictionaryOnline.Models
         public virtual User User { get; set; }
     }
 
-    public class Role
+    public class Role:IdentityRole<int>
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+    
         public string Description { get; set; }
         public virtual ICollection<User> Users { get; set; }
     }

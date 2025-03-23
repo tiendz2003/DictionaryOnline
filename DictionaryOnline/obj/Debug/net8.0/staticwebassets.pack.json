@@ -5,16 +5,24 @@
       "PackagePath": "staticwebassets\\DictionaryOnline.4cigoimk8u.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\css\\search.css",
+      "PackagePath": "staticwebassets\\css\\search.css"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\DictionaryOnline\\DictionaryOnline\\wwwroot\\lib\\bootstrap\\LICENSE",

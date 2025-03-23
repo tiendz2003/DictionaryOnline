@@ -2,7 +2,7 @@
 
 namespace DictionaryOnline.Services
 {
-    public class GoogleTranslationService
+    public class GoogleTranslationService:ITranslationService
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;

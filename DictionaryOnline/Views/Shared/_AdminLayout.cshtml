@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Dictionary Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>Dictionary Admin</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                <a asp-controller="Admin" asp-action="Index"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Search" ? "active" : "")">
+                <a asp-controller="Dictionary" asp-action="Search"><i class="fas fa-search"></i> Tra cứu từ điển</a>
+            </li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ManageDictionaries" ? "active" : "")">
+                <a asp-controller="Admin" asp-action="ManageDictionaries"><i class="fas fa-book"></i> Quản lý từ điển</a>
+            </li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Create" ? "active" : "")">
+                <a asp-controller="Dictionary" asp-action="Create"><i class="fas fa-plus-circle"></i> Thêm từ mới</a>
+            </li>
+            <li>
+                <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                    <a href="javascript:document.getElementById('logoutForm').submit()">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="user-menu">
+                <img src="/images/avatar.png" alt="User Avatar">
+                <span>@User.Identity.Name</span>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/admin.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

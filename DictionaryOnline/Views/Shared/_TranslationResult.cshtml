@@ -1,0 +1,13 @@
+﻿@model DictionaryOnline.ViewModel.TranslationResult
+
+<div class="word-card">
+    <h4>@Model.OriginalText</h4>
+    <div class="translation">
+        <strong>@Model.TranslatedText</strong>
+    </div>
+    <div class="language-info">
+        <small>
+            @Model.SourceLanguage <i class="fas fa-arrow-right"></i> @Model.TargetLanguage
+        </small>
+    </div>
+</div>

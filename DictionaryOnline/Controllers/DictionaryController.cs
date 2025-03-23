@@ -13,6 +13,7 @@ namespace DictionaryOnline.Controllers
     {
         private readonly DictionaryDbContext _context;
         private readonly ITranslationService _translationService;
+
         public DictionaryController(DictionaryDbContext context, ITranslationService translationService)
         {
             _context = context;
@@ -23,49 +24,116 @@ namespace DictionaryOnline.Controllers
             var dictionaries = await _context.Dictionaries.ToListAsync();
             return View(dictionaries);
         }
+        /*  public async Task<IActionResult> Search(string term, string fromLang, string toLang)
+          {
+              // Tìm kiếm trong cơ sở dữ liệu trước
+              var word = await _context.Words
+                  .Include(w => w.Translations)
+                  .FirstOrDefaultAsync(w => w.Text == term && w.Dictionary.SourceLanguage == fromLang && w.Dictionary.TargetLanguage == toLang);
+
+              // Nếu không tìm thấy, sử dụng Google Translate API
+              if (word == null)
+              {
+                  var translation = await _translationService.TranslateAsync(term, fromLang, toLang);
+
+                  // Lưu vào lịch sử tìm kiếm nếu người dùng đã đăng nhập
+                  if (User.Identity.IsAuthenticated)
+                  {
+                      var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                      var searchHistory = new SearchHistory
+                      {
+                          UserId = userId,
+                          SearchTerm = term,
+                          FromLanguage = fromLang,
+                          ToLanguage = toLang,
+                          SearchDate = DateTime.Now
+                      };
+                      _context.SearchHistories.Add(searchHistory);
+                      await _context.SaveChangesAsync();
+                  }
+
+                  return View("GoogleTranslationResult", translation);
+              }
+
+              return View(word);
+          }*/
+        [HttpGet]
         public async Task<IActionResult> Search(string term, string fromLang, string toLang)
         {
-            // Tìm kiếm trong cơ sở dữ liệu trước
-            var word = await _context.Words
-                .Include(w => w.Translations)
-                .FirstOrDefaultAsync(w => w.Text == term && w.Dictionary.SourceLanguage == fromLang && w.Dictionary.TargetLanguage == toLang);
-
-            // Nếu không tìm thấy, sử dụng Google Translate API
-            if (word == null)
+            if (string.IsNullOrEmpty(term))
             {
-                var translation = await _translationService.TranslateAsync(term, fromLang, toLang);
-
-                // Lưu vào lịch sử tìm kiếm nếu người dùng đã đăng nhập
-                if (User.Identity.IsAuthenticated)
-                {
-                    var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-                    var searchHistory = new SearchHistory
-                    {
-                        UserId = userId,
-                        SearchTerm = term,
-                        FromLanguage = fromLang,
-                        ToLanguage = toLang,
-                        SearchDate = DateTime.Now
-                    };
-                    _context.SearchHistories.Add(searchHistory);
-                    await _context.SaveChangesAsync();
-                }
-
-                return View("GoogleTranslationResult", translation);
+                return View();
             }
 
-            return View(word);
-        }
+            TranslationResult result;
+            // Tìm kiếm trong cơ sở dữ liệu
+            var word = await _context.Words
+                .Include(w => w.Translations)
+                .FirstOrDefaultAsync(w => w.Text == term &&
+                    w.Dictionary.SourceLanguage == fromLang &&
+                    w.Dictionary.TargetLanguage == toLang);
 
+            if (word != null)
+            {
+                var translation = word.Translations.FirstOrDefault();
+                result = new TranslationResult
+                {
+                    OriginalText = word.Text,
+                    TranslatedText = translation?.Text,
+                    SourceLanguage = fromLang,
+                    TargetLanguage = toLang
+                };
+            }
+            else
+            {
+                // Sử dụng Google Translate API
+                var googleTranslation = await _translationService.TranslateAsync(term, fromLang, toLang);
+                result = new TranslationResult
+                {
+                    OriginalText = term,
+                    TranslatedText = googleTranslation.TranslatedText,
+                    SourceLanguage = fromLang,
+                    TargetLanguage = toLang
+                };
+            }
+
+            // Lưu lịch sử tìm kiếm nếu user đã đăng nhập
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var searchHistory = new SearchHistory
+                {
+                    UserId = userId,
+                    SearchTerm = term,
+                    FromLanguage = fromLang,
+                    ToLanguage = toLang,
+                    SearchDate = DateTime.Now
+                };
+                _context.SearchHistories.Add(searchHistory);
+                await _context.SaveChangesAsync();
+            }
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_TranslationResult", result);
+            }
+
+            return View(result);
+        }
         [HttpGet]
-        [Authorize(Roles = "Admin,Editor")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
+            // Lấy danh sách từ điển từ database
+            var dictionaries = _context.Dictionaries
+                .Select(d => new { d.Id, d.Name })
+                .ToList();
+            ViewBag.Dictionaries = dictionaries;
             return View();
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin,Editor")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(WordViewModel model)
         {
             if (ModelState.IsValid)
@@ -90,10 +158,15 @@ namespace DictionaryOnline.Controllers
 
                 _context.Words.Add(word);
                 await _context.SaveChangesAsync();
-
+                TempData["SuccessMessage"] = "Đã thêm từ mới thành công!";
                 return RedirectToAction(nameof(Index));
             }
+            var dictionaries = _context.Dictionaries
+            .Select(d => new { d.Id, d.Name })
+            .ToList();
+            ViewBag.Dictionaries = dictionaries;
             return View(model);
+       
         }
         [HttpGet]
         [Authorize(Roles = "Admin,Editor")]

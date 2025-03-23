@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DictionaryOnline")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63df37e8d7f33b712fcda11327be2cef8901f3d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef1e2a69ccb6b535ac2a26647ca59a7bc165e4fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("DictionaryOnline")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DictionaryOnline")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

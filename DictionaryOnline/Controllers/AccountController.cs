@@ -32,7 +32,7 @@ namespace DictionaryOnline.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Admin");
                 }
                 ModelState.AddModelError(string.Empty, "Đăng nhập không thành công.");
             }
@@ -48,7 +48,7 @@ namespace DictionaryOnline.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { Username = model.UserName, Email = model.Email, CreatedAt = DateTime.Now };
+                var user = new User {Email = model.Email, CreatedAt = DateTime.Now };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -1,0 +1,57 @@
+﻿@model DictionaryOnline.ViewModel.TranslationResult
+@{
+    ViewData["Title"] = "Tra cứu từ điển";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dictionary-search">
+                <h4>Tra cứu từ điển</h4>
+                <form id="searchForm">
+                    <div class="language-selector">
+                        <select name="fromLang" class="form-select">
+                            <option value="en">Tiếng Anh</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="fr">Tiếng Pháp</option>
+                            <option value="de">Tiếng Đức</option>
+                            <option value="ja">Tiếng Nhật</option>
+                        </select>
+
+                        <div class="language-switcher">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+
+                        <select name="toLang" class="form-select">
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="en">Tiếng Anh</option>
+                            <option value="fr">Tiếng Pháp</option>
+                            <option value="de">Tiếng Đức</option>
+                            <option value="ja">Tiếng Nhật</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input id ="searchTerm" type="text" name="term" class="form-control" placeholder="Nhập từ cần tra cứu...">
+                        <button id ="searchButton" class="btn btn-primary" type="submit">
+                            <i class="fas fa-search"></i> Tra cứu
+                        </button>
+                    </div>
+                </form>
+
+                <div class="search-results" id="searchResults">
+                    @if (Model != null)
+                    {
+                        <partial name="_TranslationResult" model="Model" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Định nghĩa biến toàn cục
+    window.searchUrl = '@Url.Action("Search", "Dictionary")';
+</script>
+<script src="~/js/admin.js"></script>

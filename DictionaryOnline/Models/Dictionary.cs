@@ -1,4 +1,5 @@
-﻿using System.Transactions;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Transactions;
 
 namespace DictionaryOnline.Models
 {
@@ -24,8 +25,10 @@ namespace DictionaryOnline.Models
         public string PartOfSpeech { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+     
 
         public int DictionaryId { get; set; }
+        [ForeignKey("DictionaryId")]
         public virtual Dictionary Dictionary { get; set; }
 
         public virtual ICollection<Translation> Translations { get; set; }

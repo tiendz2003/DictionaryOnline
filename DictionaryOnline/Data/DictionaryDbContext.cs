@@ -1,10 +1,12 @@
 ﻿using DictionaryOnline.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace DictionaryOnline.Data
 {
-    public class DictionaryDbContext:DbContext
+    public class DictionaryDbContext: IdentityDbContext<User, IdentityRole<int>,int>
     {
         public DictionaryDbContext(DbContextOptions<DictionaryDbContext> options)
        : base(options)
@@ -21,7 +23,18 @@ namespace DictionaryOnline.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // Ngăn chặn xóa cascade giữa AspNetUsers và AspNetUserRoles
+            modelBuilder.Entity<IdentityUserRole<int>>()
+                .HasOne<User>()
+                .WithMany()
+                .HasForeignKey(ur => ur.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
 
+            modelBuilder.Entity<IdentityUserRole<int>>()
+                .HasOne<Role>()
+                .WithMany()
+                .HasForeignKey(ur => ur.RoleId)
+                .OnDelete(DeleteBehavior.NoAction);
             // Thiết lập unique cho cột Word để tránh trùng lặp từ vựng
             modelBuilder.Entity<Word>()
                 .HasIndex(w => w.DictionaryId)

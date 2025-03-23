@@ -1,0 +1,80 @@
+﻿@model DictionaryOnline.ViewModel.WordViewModel
+@{
+    ViewData["Title"] = "Thêm từ mới";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Sử dụng layout mặc định
+}
+
+<div class="container">
+    <h2 class="mt-4">Thêm từ mới</h2>
+    <form asp-action="Create" asp-controller="Dictionary" method="post">
+        <!-- Hiển thị thông báo lỗi nếu có -->
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger" role="alert">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+        }
+
+        <div class="form-group mb-3">
+            <label asp-for="Text" class="form-label">Từ vựng</label>
+            <input asp-for="Text" class="form-control" placeholder="Nhập từ vựng" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Pronunciation" class="form-label">Phiên âm</label>
+            <input asp-for="Pronunciation" class="form-control" placeholder="Nhập phiên âm (nếu có)" />
+            <span asp-validation-for="Pronunciation" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="PartOfSpeech" class="form-label">Loại từ</label>
+            <select asp-for="PartOfSpeech" class="form-select">
+                <option value="">Chọn loại từ</option>
+                <option value="noun">Danh từ</option>
+                <option value="verb">Động từ</option>
+                <option value="adjective">Tính từ</option>
+                <option value="adverb">Trạng từ</option>
+                <option value="preposition">Giới từ</option>
+                <option value="conjunction">Liên từ</option>
+                <option value="pronoun">Đại từ</option>
+            </select>
+            <span asp-validation-for="PartOfSpeech" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="DictionaryId" class="form-label">Từ điển</label>
+            <select asp-for="DictionaryId" class="form-select" asp-items="@(new SelectList(ViewBag.Dictionaries, "Id", "Name"))">
+                <option value="">Chọn từ điển</option>
+            </select>
+            <span asp-validation-for="DictionaryId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Translation" class="form-label">Dịch nghĩa</label>
+            <input asp-for="Translation" class="form-control" placeholder="Nhập nghĩa của từ" />
+            <span asp-validation-for="Translation" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Example" class="form-label">Ví dụ</label>
+            <textarea asp-for="Example" class="form-control" rows="3" placeholder="Nhập câu ví dụ (nếu có)"></textarea>
+            <span asp-validation-for="Example" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Notes" class="form-label">Ghi chú</label>
+            <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Nhập ghi chú (nếu có)"></textarea>
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Thêm từ</button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Quay lại</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
